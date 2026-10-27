@@ -161,6 +161,7 @@ section{padding:96px 0}
 .contact h2{font-stretch:110%;font-weight:800;font-size:clamp(36px,5vw,60px);letter-spacing:-.025em}
 .contact p{color:var(--lav)}
 .contact a{color:var(--white)}
+form a{color:var(--indigo)!important;font-weight:600}
 .phone{display:block;font-family:'Archivo',sans-serif;font-stretch:112%;font-weight:800;font-size:clamp(30px,3.6vw,40px);text-decoration:none;color:var(--go)!important;margin:18px 0 10px}
 form{background:var(--white);color:var(--black);border-radius:6px;padding:32px;display:grid;gap:16px}
 form h3{font-size:22px;font-weight:800}
@@ -184,9 +185,9 @@ footer a{color:var(--white)}
 @media (max-width:760px){.bar{display:flex}.nav nav a.link,.nav nav .btn{display:none}.float{display:none!important}}
 
 /* floating book-now button (desktop): shows after the hero, hides at the form */
-.float{position:fixed;right:24px;bottom:24px;z-index:25;display:flex;align-items:center;gap:10px;min-height:58px;padding:0 26px 0 20px;border-radius:999px;background:var(--go);color:#000;text-decoration:none;font-family:'Archivo',sans-serif;font-weight:800;font-size:17px;box-shadow:0 10px 30px rgba(18,15,43,.35);opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .25s ease,transform .25s ease,background .15s}
+.float{position:fixed;right:24px;bottom:24px;z-index:25;display:flex;align-items:center;gap:10px;min-height:58px;padding:0 26px 0 20px;border-radius:999px;background:var(--go);color:#000;text-decoration:none;font-family:'Archivo',sans-serif;font-weight:800;font-size:17px;box-shadow:0 10px 30px rgba(18,15,43,.35);opacity:0;transform:translateY(16px);pointer-events:none;visibility:hidden;transition:opacity .25s ease,transform .25s ease,background .15s,visibility .25s}
 .float:hover{background:var(--go-hover)}
-.float.show{opacity:1;transform:none;pointer-events:auto}
+.float.show{opacity:1;transform:none;pointer-events:auto;visibility:visible}
 .float .dot{width:10px;height:10px;border-radius:50%;background:#1a7f37;box-shadow:0 0 0 0 rgba(26,127,55,.6)}
 @media (prefers-reduced-motion:no-preference){.float .dot{animation:ping 2s infinite}}
 @keyframes ping{0%{box-shadow:0 0 0 0 rgba(26,127,55,.55)}70%{box-shadow:0 0 0 9px rgba(26,127,55,0)}100%{box-shadow:0 0 0 0 rgba(26,127,55,0)}}
@@ -397,7 +398,7 @@ footer a{color:var(--white)}
           </select>
         </label>
         <label>Anything I should know? <textarea name="message" rows="3"></textarea></label>
-        <label class="consent"><input type="checkbox" name="consent" value="yes" required> <span>I agree that John Campoverde may contact me by call, text or email about buying or selling a home. Message and data rates may apply. Reply STOP to opt out.</span></label>
+        <label class="consent"><input type="checkbox" name="consent" value="yes" required> <span>I agree that John Campoverde may contact me by call, text or email about buying or selling a home. Message and data rates may apply. Reply STOP to opt out. See my <a href="privacy.html">privacy policy</a>.</span></label>
         <button class="btn btn-go" type="submit">Book my appointment</button>
       </form>
     </div>
@@ -418,6 +419,8 @@ footer a{color:var(--white)}
       <!-- TREC-required links: iabs.pdf and consumer-protection-notice.pdf live in this folder. -->
       <a href="iabs.pdf" target="_blank" rel="noopener">Texas Real Estate Commission Information About Brokerage Services</a>
       <a href="consumer-protection-notice.pdf" target="_blank" rel="noopener">Texas Real Estate Commission Consumer Protection Notice</a>
+      <a href="privacy.html">Privacy and cookies</a>
+      <a href="accessibility.html">Accessibility</a>
     </div>
     <p class="legal">Information deemed reliable but not guaranteed. © 2026 John Campoverde, ClearView Realty LLC.</p>
   </div>
