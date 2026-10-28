@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What is my home really worth? | John Campoverde, ClearView Realty LLC</title>
+<meta name="description" content="Online estimates can miss by thousands. Get a free comparative market analysis (CMA) of your El Paso home from John Campoverde, REALTOR® with ClearView Realty LLC.">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,800&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ind:#1E1A45;--deep:#120F2B;--gold:#f5b300;--gold-h:#ffc533;--stone:#F3F2F8;--rule:#d8d6e4;--gray:#55526b;--lav:#d9d6ef}
+*{box-sizing:border-box}
+body{margin:0;font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:18px;line-height:1.6;color:#000;background:#fff}
+h1,h2,h3{font-family:'Archivo','IBM Plex Sans',sans-serif;margin:0;line-height:1.05}
+a{color:var(--ind);text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+img{max-width:100%}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+
+header{background:var(--deep);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+header a{color:#fff;text-decoration:none;font-family:'Archivo',sans-serif;font-stretch:118%;font-weight:800;font-size:19px}
+header a.logo{display:inline-flex;align-items:center;min-height:44px}
+header a.hcall{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:4px;background:var(--gold);color:#000;font-stretch:100%;font-size:15px}
+@media (max-width:420px){header a.hcall{font-size:0;padding:0 14px}header a.hcall::after{content:'Call';font-size:15px}}
+
+.hero{background:var(--ind);color:#fff;padding:64px 0 72px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:56px;align-items:start}
+@media (max-width:880px){.hero{padding:40px 0 48px}.hero .wrap{grid-template-columns:1fr;gap:32px}}
+.eyebrow{color:var(--gold);font-weight:600;font-size:15px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
+.hero h1{font-stretch:112%;font-weight:800;font-size:clamp(38px,5.4vw,64px);letter-spacing:-.025em}
+.hero .lead{font-size:clamp(18px,1.8vw,21px);color:var(--lav);margin:20px 0 0;max-width:30em}
+.miss{margin-top:28px;border-left:5px solid var(--gold);padding:4px 0 4px 18px}
+.miss b{display:block;font-family:'Archivo',sans-serif;font-stretch:110%;font-size:clamp(26px,3vw,34px);line-height:1.15;color:#fff}
+.miss span{color:var(--lav);font-size:16px}
+
+form{background:#fff;color:#000;border-radius:8px;padding:28px;display:grid;gap:14px;box-shadow:0 18px 40px rgba(0,0,0,.25)}
+form h2{font-size:24px;font-weight:800;font-stretch:108%}
+form .sub{margin:-6px 0 4px;color:var(--gray);font-size:16px}
+label{display:grid;gap:6px;font-weight:600;font-size:16px}
+input,select,textarea{font:inherit;font-size:17px;padding:12px 14px;border:1.5px solid #8f8c86;border-radius:4px;width:100%;background:#fff;color:#000}
+input:focus,select:focus,textarea:focus{border-color:#000;outline:3px solid var(--gold);outline-offset:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:480px){.two{grid-template-columns:1fr}}
+.consent{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:14px;color:var(--gray)}
+.consent input{width:auto;margin-top:4px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:10px 24px;border:0;border-radius:4px;font-family:'Archivo',sans-serif;font-weight:800;font-size:18px;cursor:pointer;text-decoration:none}
+.btn-go{background:var(--gold);color:#000;width:100%}
+.btn-go:hover{background:var(--gold-h)}
+.hidden{display:none}
+.promise{font-size:14px;color:var(--gray);text-align:center;margin:0}
+
+section{padding:72px 0}
+.alt{background:var(--stone)}
+h2.sec{font-stretch:110%;font-weight:800;font-size:clamp(30px,4vw,44px);letter-spacing:-.02em;margin-bottom:12px}
+.intro{color:var(--gray);max-width:40em;margin:0 0 32px}
+
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:18px}
+.card{background:#fff;border:1.5px solid var(--rule);border-radius:8px;padding:22px}
+.card h3{font-size:20px;font-weight:800;margin-bottom:6px}
+.card p{margin:0;color:#2b2940;font-size:16px}
+
+.cmp{width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;font-size:16px}
+.cmp th,.cmp td{padding:14px 16px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+.cmp thead th{background:var(--ind);color:#fff;font-family:'Archivo',sans-serif}
+.cmp thead th:last-child{background:var(--gold);color:#000}
+.cmp td:last-child{font-weight:600}
+@media (max-width:600px){.cmp{font-size:14px}.cmp th,.cmp td{padding:10px 8px}}
+
+.get{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:14px 28px}
+.get li{display:flex;gap:12px;align-items:flex-start}
+.get li::before{content:"";flex:0 0 26px;height:26px;border-radius:50%;background:var(--gold) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/16px no-repeat;margin-top:2px}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));border-top:2px solid var(--ind)}
+.stat{padding:20px 20px 20px 0;border-bottom:1px solid var(--rule)}
+.stat b{display:block;font-family:'Archivo',sans-serif;font-stretch:112%;font-weight:800;font-size:clamp(28px,3.4vw,38px);line-height:1.1}
+.stat span{color:var(--gray);font-size:15px}
+.source{font-size:13px;color:var(--gray);margin-top:12px}
+
+.me{display:grid;grid-template-columns:180px minmax(0,1fr);gap:32px;align-items:center}
+@media (max-width:600px){.me{grid-template-columns:1fr;gap:20px}}
+.me img{width:180px;height:180px;border-radius:50%;object-fit:cover;object-position:center top;border:4px solid var(--gold)}
+.me p{color:#2b2940;margin:8px 0 0}
+
+.cta{background:var(--gold);padding:48px 0}
+.cta .wrap{display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;justify-content:space-between}
+.cta h2{font-stretch:110%;font-weight:800;font-size:clamp(26px,3.4vw,38px)}
+.cta .btn{background:var(--ind);color:#fff;min-width:220px}
+
+
+.choose{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:20px;align-items:stretch}
+@media (max-width:760px){.choose{grid-template-columns:1fr}}
+.opt{border-radius:10px;padding:26px;display:flex;flex-direction:column;gap:10px}
+.opt .lab{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.opt h3{font-size:24px;font-weight:800}
+.opt ul{margin:4px 0 0;padding-left:20px;font-size:16px}
+.opt li{margin-bottom:4px}
+.o-zillow{background:#f4f4f5;border:1.5px dashed #b9b9c0;color:#6b6b73}
+.o-zillow h3{color:#55555c}
+.o-zillow .lab{color:#66666e}
+.o-zillow a.zl{margin-top:auto;align-self:flex-start;color:#6b6b73;font-size:15px}
+.o-me{background:var(--ind);color:#fff;box-shadow:0 14px 34px rgba(30,26,69,.28)}
+.o-me .lab{color:var(--gold)}
+.o-me ul{color:var(--lav)}
+.o-me .btn{margin-top:auto;align-self:stretch}
+.o-me .rec{align-self:flex-start;background:var(--gold);color:#000;font-weight:700;font-size:13px;border-radius:99px;padding:4px 12px}
+.zillow{font-size:15px;color:var(--gray);margin:0}
+.fine{font-size:13px;color:var(--gray)}
+footer{background:var(--deep);color:#c9c6e0;padding:32px 24px;font-size:15px;text-align:center}
+footer a{color:#fff;display:inline-block;padding:6px 0}
+</style>
+</head>
+<body>
+<header><a class="logo" href="/">JOHN CAMPOVERDE</a><a class="hcall" href="tel:+19155255251">Call (915) 525-5251</a></header>
+
+<main>
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Free home value report</div>
+      <h1>What's your home really worth?</h1>
+      <p class="lead">Online estimates are a guess made by a computer that has never seen your home. Before you make a decision worth hundreds of thousands of dollars, get a real number from a local REALTOR&reg;.</p>
+      <div class="miss">
+        <b>Even a 5% miss on a $280,000 home is $14,000.</b>
+        <span>That's money left on the table, or a price that scares off buyers.</span>
+      </div>
+    </div>
+
+    <form name="home-value" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field" id="cma">
+      <input type="hidden" name="form-name" value="home-value">
+      <p class="hidden"><label>Leave this empty <input name="bot-field"></label></p>
+      <h2>Get your free CMA</h2>
+      <p class="sub">Based on real recent sales near you, not an algorithm.</p>
+      <label>Property address <input name="address" autocomplete="street-address" required></label>
+      <div class="two">
+        <label>Name <input name="name" autocomplete="name" required></label>
+        <label>Phone <input name="phone" type="tel" autocomplete="tel" required></label>
+      </div>
+      <label>Email <input name="email" type="email" autocomplete="email"></label>
+      <label>Thinking of selling?
+        <select name="timeline">
+          <option>In the next 3 months</option>
+          <option>3 to 6 months</option>
+          <option>6 to 12 months</option>
+          <option>Just curious for now</option>
+        </select>
+      </label>
+      <label>Upgrades or anything I should know? <textarea name="message" rows="2"></textarea></label>
+      <label class="consent"><input type="checkbox" name="consent" value="yes" required> <span>John Campoverde may contact me by call, text or email about my home. Message and data rates may apply. Reply STOP to opt out. See my <a href="/privacy.html">privacy policy</a>.</span></label>
+      <button class="btn btn-go" type="submit">Get my free home value</button>
+      <p class="promise">Free, no obligation. I'll reach out within one business day.</p>
+    </form>
+  </div>
+</div>
+
+
+<section style="padding-bottom:24px">
+  <div class="wrap">
+    <h2 class="sec">Two ways to price your home</h2>
+    <p class="intro">You can get a rough ballpark online in a minute. Just know what you're getting.</p>
+    <div class="choose">
+      <div class="opt o-zillow">
+        <span class="lab">Option 1 &middot; Rough ballpark</span>
+        <h3>An online estimate</h3>
+        <ul>
+          <li>Made by an algorithm from public records</li>
+          <li>Never sees inside your home</li>
+          <li>Usually misses your upgrades and condition</li>
+          <li>No one to explain the number or answer questions</li>
+        </ul>
+        <a class="zl" href="https://www.zillow.com/how-much-is-my-home-worth/" target="_blank" rel="noopener">See a ballpark on Zillow (opens Zillow's site)</a>
+      </div>
+      <div class="opt o-me">
+        <span class="rec">Recommended</span>
+        <span class="lab">Option 2 &middot; A real number</span>
+        <h3>A free CMA from John</h3>
+        <ul>
+          <li>Built from recent sales near you, hand-picked</li>
+          <li>Adjusted for your upgrades, condition and lot</li>
+          <li>Shows the homes you'd compete against today</li>
+          <li>A local REALTOR&reg; who walks you through it and picks up the phone</li>
+        </ul>
+        <a class="btn btn-go" href="#cma">Get my free CMA</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <h2 class="sec">Why online estimates miss</h2>
+    <p class="intro">Zillow says it plainly: the Zestimate is a starting point, not an appraisal. Here's what an algorithm can't see.</p>
+    <div class="why">
+      <div class="card"><h3>Your upgrades</h3><p>A new kitchen, a new roof or refrigerated air can add real value. Public records usually don't show them.</p></div>
+      <div class="card"><h3>Your home's condition</h3><p>Two homes on the same street can sell far apart because one was kept up and one wasn't.</p></div>
+      <div class="card"><h3>Your exact location</h3><p>Backing onto a busy road, a park view, a corner lot or a bigger yard all change what buyers will pay.</p></div>
+      <div class="card"><h3>This month's market</h3><p>What's selling now, how fast, and what you'd be competing against. That moves week to week.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2 class="sec">Online estimate vs. a CMA from me</h2>
+    <p class="intro">A comparative market analysis (CMA) is how agents price homes to actually sell.</p>
+    <table class="cmp">
+      <thead><tr><th></th><th>Online estimate</th><th>CMA from John</th></tr></thead>
+      <tbody>
+        <tr><td>Based on</td><td>Public records and an algorithm</td><td>Recent MLS sales near you, hand-picked and adjusted</td></tr>
+        <tr><td>Sees your home</td><td>No</td><td>Yes, if you'd like me to walk through it</td></tr>
+        <tr><td>Accounts for upgrades and condition</td><td>Rarely</td><td>Yes</td></tr>
+        <tr><td>Shows your competition</td><td>No</td><td>Yes, the homes for sale near you right now</td></tr>
+        <tr><td>Someone to answer your questions</td><td>No</td><td>Yes, call or text me</td></tr>
+        <tr><td>Cost</td><td>Free</td><td>Free</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="sec">What you'll get</h2>
+    <p class="intro">A clear, simple report you can actually use, whether you sell next month or next year.</p>
+    <ul class="get">
+      <li>The homes that sold near you recently, and what they sold for</li>
+      <li>The homes for sale near you now, your competition</li>
+      <li>A suggested price range for your home</li>
+      <li>How long similar homes are taking to sell</li>
+      <li>Tips on what would add value before you list</li>
+      <li>Straight answers to your questions, no pressure</li>
+    </ul>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2 class="sec">The El Paso market right now</h2>
+    <div class="stats">
+      <div class="stat"><b>$280,850</b><span>Median sold price, September 2026</span></div>
+      <div class="stat"><b>741</b><span>Homes sold in September</span></div>
+      <div class="stat"><b>68 days</b><span>Average time on market</span></div>
+      <div class="stat"><b>3.7 months</b><span>Supply of homes for sale</span></div>
+    </div>
+    <p class="source">Source: El Paso MLS (Flexmls), El Paso County residential, September 2026. Deemed reliable but not guaranteed. Every neighborhood is different, which is exactly why your CMA uses sales near you.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap me">
+    <img src="headshot.jpg" alt="John Campoverde, REALTOR® with ClearView Realty LLC" width="720" height="900">
+    <div>
+      <h2 class="sec" style="margin:0">Who prepares your report</h2>
+      <p>I'm John Campoverde, a licensed REALTOR&reg; with ClearView Realty LLC, a brokerage that has served El Paso for 20 years. I'll pull the sales myself, walk you through the numbers and give you a straight answer. Straight talk, and I always pick up.</p>
+    </div>
+  </div>
+</section>
+
+<div class="cta">
+  <div class="wrap">
+    <h2>Get a real number for your home.</h2>
+    <a class="btn" href="#cma">Get my free home value</a>
+  </div>
+</div>
+
+<section style="padding:40px 0">
+  <div class="wrap">
+    <p class="fine" style="margin:0">A CMA is a real estate agent's opinion of value based on market data. It is not an appraisal. The $14,000 example is an illustration, not a statement about any specific estimate. Zillow and Zestimate are trademarks of Zillow, Inc., which is not affiliated with John Campoverde or ClearView Realty LLC.</p>
+  </div>
+</section>
+</main>
+
+<footer>John Campoverde, REALTOR&reg;, ClearView Realty LLC, 12247 Rojas Dr, El Paso, TX. <a href="tel:+19155255251">(915) 525-5251</a>. Equal Housing Opportunity.<br><a href="/">Back to home</a> &middot; <a href="/privacy.html">Privacy</a> &middot; <a href="/accessibility.html">Accessibility</a></footer>
+</body>
+</html>

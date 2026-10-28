@@ -3,12 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Trusted lenders | John Campoverde, ClearView Realty LLC</title>
+<title>Trusted El Paso lenders | John Campoverde, ClearView Realty LLC</title>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,800&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
 body{margin:0;font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:18px;line-height:1.65;color:#000;background:#fff}
-header{background:#120F2B;padding:20px 24px}
+header{background:#120F2B;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 header a{color:#fff;text-decoration:none;font-family:'Archivo',sans-serif;font-stretch:118%;font-weight:800;font-size:19px}
+header a.logo{display:inline-flex;align-items:center;min-height:44px}
+header a.hcall{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:4px;background:#f5b300;color:#000;font-stretch:100%;font-size:15px}
+@media (max-width:420px){header a.hcall{font-size:0;padding:0 14px}header a.hcall::after{content:'Call';font-size:15px}}
+footer a{display:inline-block;padding:6px 0}
+img{max-width:100%}
 main{max-width:760px;margin:0 auto;padding:56px 24px 80px}
 h1{font-family:'Archivo',sans-serif;font-stretch:110%;font-weight:800;font-size:clamp(34px,5vw,48px);line-height:1.05;letter-spacing:-.02em;margin:0 0 8px}
 h2{font-family:'Archivo',sans-serif;font-weight:800;font-size:22px;margin:40px 0 8px}
@@ -18,23 +23,118 @@ a{color:#1E1A45;text-underline-offset:3px}
 :focus-visible{outline:3px solid #f5b300;outline-offset:3px}
 footer{background:#120F2B;color:#c9c6e0;padding:32px 24px;font-size:15px;text-align:center}
 footer a{color:#fff}
+
+.lead{font-size:20px}
+.est{background:#F3F2F8;border-left:6px solid #f5b300;border-radius:6px;padding:18px 20px;margin:24px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:10px 24px;border-radius:4px;font-weight:700;text-decoration:none;font-family:'Archivo',sans-serif}
+.btn-line{border:2px solid #1E1A45;color:#1E1A45}
+.btn-go{background:#f5b300;color:#000;border:0;font-size:17px;cursor:pointer;width:100%}
+.btn-go:hover{background:#ffc533}
+.cmp{width:100%;border-collapse:collapse;margin:16px 0;font-size:16px}
+.cmp th,.cmp td{border-bottom:1px solid #d8d6e4;padding:10px 8px;text-align:left;vertical-align:top}
+.cmp th{font-family:'Archivo',sans-serif}
+form{background:#1E1A45;border-radius:8px;padding:28px;display:grid;gap:14px;margin-top:16px}
+form h2{color:#fff;margin:0}
+form p.sub{color:#d9d6ef;margin:0}
+label{display:grid;gap:6px;font-weight:600;font-size:16px;color:#fff}
+input,textarea{font:inherit;font-size:17px;padding:12px 14px;border:1.5px solid #8f8c86;border-radius:4px;width:100%;box-sizing:border-box;background:#fff;color:#000}
+input:focus,textarea:focus{outline:3px solid #f5b300;outline-offset:0}
+.consent{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:14px;color:#d9d6ef}
+.consent input{width:auto;margin-top:4px}
+.consent a{color:#fff}
+.hidden{display:none}
+.fine{font-size:14px;color:#55526b}
+
+.btns{display:grid;gap:14px;margin:26px 0 8px}
+.big{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:76px;padding:16px 22px;border-radius:8px;text-decoration:none;font-family:'Archivo',sans-serif;font-weight:800;font-size:21px;line-height:1.2}
+.big small{display:block;font-family:'IBM Plex Sans',sans-serif;font-weight:400;font-size:15px;margin-top:3px}
+.big svg{flex:0 0 24px;width:24px;height:24px}
+.b-text{background:#f5b300;color:#000}
+.b-text small{color:#3d3a33}
+.b-search{background:#1E1A45;color:#fff}
+.b-search small{color:#d9d6ef}
+.b-line{border:2px solid #1E1A45;color:#1E1A45;background:#fff}
+.b-line small{color:#55526b}
+[hidden]{display:none!important}
+
+.lenders{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:16px;margin:22px 0}
+.lender{border:2px solid #d8d6e4;border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:6px}
+.lender .tag{align-self:flex-start;background:#F3F2F8;color:#1E1A45;font-weight:700;font-size:14px;border-radius:99px;padding:4px 12px}
+.lender h3{font-family:'Archivo',sans-serif;font-weight:800;font-size:22px;margin:4px 0 0}
+.lender .co{color:#55526b;margin:0}
+.lender .nmls{font-size:14px;color:#55526b;margin:0}
+.lender .acts{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
+.lender .acts a{flex:1;min-width:200px;display:inline-flex;align-items:center;justify-content:center;min-height:48px;border-radius:4px;font-weight:700;text-decoration:none;font-family:'Archivo',sans-serif}
+.a-call{background:#1E1A45;color:#fff}
+.a-text{border:2px solid #1E1A45;color:#1E1A45}
+.check li{margin-bottom:6px}
+.avatar{position:relative;width:112px;height:112px;border-radius:50%;background:#F3F2F8;border:3px solid #f5b300;overflow:hidden;display:flex;align-items:center;justify-content:center;margin-bottom:8px}
+.avatar span{font-family:'Archivo',sans-serif;font-weight:800;font-size:34px;color:#1E1A45}
+.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
 </style>
 </head>
 <body>
-<header><a href="/">JOHN CAMPOVERDE</a></header>
+<header><a class="logo" href="/">JOHN CAMPOVERDE</a><a class="hcall" href="tel:+19155255251">Call (915) 525-5251</a></header>
 <main>
-<h1>Trusted El Paso lenders</h1>
-<p class="date">Page in progress</p>
-<p>Lenders work differently. Rates, fees and loan programs vary from one lender to the next, so it pays to compare at least two before you choose.</p>
-<p>I'm finishing this page with the four El Paso lenders I trust, including who's strongest with VA, FHA, first-time buyers and down payment help. Until it's up, call or text me and I'll connect you with the right one for your situation.</p>
-<p><a href="tel:+19155255251"><strong>Call or text (915) 525-5251</strong></a> &nbsp;or&nbsp; <a href="/#contact">book a free buyer consultation</a>.</p>
-<h2>Good to know</h2>
-<ul>
-<li>Get pre-approved before you tour homes, so you know your real budget.</li>
-<li>Ask each lender about down payment and closing cost help programs.</li>
-<li>Compare the Loan Estimate from each lender line by line, not just the rate.</li>
+<h1>Save money. Compare lenders.</h1>
+<p class="lead">Lenders work differently. Rates, fees and loan programs vary from one lender to the next, and the difference can add up to thousands over the life of your loan. These four lenders work hard for my clients.</p>
+
+<div class="lenders">
+<div class="lender">
+<div class="avatar"><span aria-hidden="true">JR</span><img src="lender-joshua-reza.jpg" alt="Joshua Reza" width="600" height="600" loading="lazy" onerror="this.remove()"></div>
+<h3>Joshua Reza</h3>
+<p class="co">Cadence Lending Group</p>
+<p class="nmls">NMLS #1700312</p>
+<div class="acts"><a class="a-call" href="tel:+19156033823">Call (915) 603-3823</a></div>
+</div>
+<div class="lender">
+<div class="avatar"><span aria-hidden="true">PC</span><img src="lender-priscilla-perez-caro.jpg" alt="Priscilla Perez Caro" width="600" height="600" loading="lazy" onerror="this.remove()"></div>
+<h3>Priscilla Perez Caro</h3>
+<p class="co">CMG Home Loans</p>
+<p class="nmls">NMLS #1468326</p>
+<div class="acts"><a class="a-call" href="tel:+19153461774">Call (915) 346-1774</a></div>
+</div>
+<div class="lender">
+<div class="avatar"><span aria-hidden="true">AG</span><img src="lender-armando-guzman.jpg" alt="Armando Guzman" width="600" height="600" loading="lazy" onerror="this.remove()"></div>
+<h3>Armando Guzman</h3>
+<p class="co">All Western Mortgage</p>
+<p class="nmls">NMLS #966653</p>
+<div class="acts"><a class="a-call" href="tel:+19152159429">Call (915) 215-9429</a></div>
+</div>
+<div class="lender">
+<div class="avatar"><span aria-hidden="true">MS</span><img src="lender-miguel-solis.jpg" alt="Miguel Solis" width="600" height="600" loading="lazy" onerror="this.remove()"></div>
+<h3>Miguel Solis</h3>
+<p class="co">The Mortgage Link</p>
+<p class="nmls">NMLS #1223267</p>
+<div class="acts"><a class="a-call" href="tel:+12144073987">Call (214) 407-3987</a></div>
+</div>
+</div>
+
+<div class="est">
+<p style="margin:0"><strong>Tip: talk to at least two.</strong> Ask each one for a Loan Estimate on the same day, then compare page 2 line by line: the rate, the points and the lender fees, not just the monthly payment.</p>
+</div>
+
+<h2>What to have ready for pre-approval</h2>
+<ul class="check">
+<li>Photo ID</li>
+<li>Your last 30 days of pay stubs</li>
+<li>W-2s from the last two years (tax returns if you're self-employed)</li>
+<li>Your last two months of bank statements</li>
+<li>For VA loans: your Certificate of Eligibility, or the lender can request it</li>
 </ul>
-<p style="font-size:15px;color:#55526b;margin-top:40px">You are free to choose any lender. I do not receive any compensation for lender recommendations. I am a real estate agent, not a lender or financial advisor. This is not an offer of credit.</p>
+
+<h2>Questions to ask every lender</h2>
+<ul class="check">
+<li>What loan programs do I qualify for, and what's the minimum down payment for each?</li>
+<li>Do you work with Texas down payment assistance programs?</li>
+<li>What are your lender fees, and are there points in this rate?</li>
+<li>How long will my pre-approval last, and how fast can you close?</li>
+</ul>
+
+<h2>Want an introduction?</h2>
+<p>Tell me a little about your situation and I'll point you to the lender who fits best. <a href="sms:+19155255251"><strong>Text me at (915) 525-5251</strong></a> or <a href="/#contact">book a free buyer consultation</a>.</p>
+
+<p class="fine" style="margin-top:36px">You are free to choose any lender. I do not receive any compensation, referral fee or anything of value for recommending these lenders. I am a real estate agent, not a lender or financial advisor. This is not an offer of credit or a commitment to lend. You can verify any loan officer's license at <a href="https://www.nmlsconsumeraccess.org" target="_blank" rel="noopener">nmlsconsumeraccess.org</a>.</p>
 </main>
 <footer>John Campoverde, REALTOR&reg;, ClearView Realty LLC, 12247 Rojas Dr, El Paso, TX. <a href="tel:+19155255251">(915) 525-5251</a>. Equal Housing Opportunity.<br><a href="/">Back to home</a></footer>
 </body>
