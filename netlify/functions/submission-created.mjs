@@ -85,7 +85,7 @@ export function buildLead(payload, now = new Date()) {
     cv_first_landing_page: get('landing-page'),
     cv_first_visit_date: get('first-visit'),
     cv_date_received: today,
-    cv_referrer: get('referrer'),
+    cv_referrer: get('came-from'),
     cv_utm_source: get('utm-source'),
     cv_utm_medium: get('utm-medium'),
     cv_utm_campaign: get('utm-campaign'),
@@ -105,8 +105,8 @@ export function buildLead(payload, now = new Date()) {
 
   const rows = Object.keys(LABELS).filter((k) => get(k)).map((k) => `<li><b>${LABELS[k]}:</b> ${esc(get(k))}</li>`);
   const track = [
-    ['Form', form], ['Sent from page', get('source-page')], ['First landing page', get('landing-page')],
-    ['First visit', get('first-visit')], ['Referring site', get('referrer')],
+    ['Form', form], ['Sent from page', get('source-page') || get('referrer')], ['First landing page', get('landing-page')],
+    ['First visit', get('first-visit')], ['Referring site', get('came-from')],
     ['Campaign', [get('utm-source'), get('utm-medium'), get('utm-campaign')].filter(Boolean).join(' / ')],
     ['Marketing texts', texts ? 'Yes' : 'No'], ['Marketing emails', emails ? 'Yes' : 'No'],
   ].filter(([, v]) => v).map(([k, v]) => `<li><b>${k}:</b> ${esc(v)}</li>`);
