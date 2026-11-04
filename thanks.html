@@ -8,21 +8,67 @@
 <title>Thanks | John Campoverde, ClearView Realty</title>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,800&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
-body{margin:0;font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:18px;background:#1E1A45;color:#fff;display:flex;min-height:100vh;align-items:center;justify-content:center;padding:24px;text-align:center}
-.box{max-width:540px}
-h1{font-family:'Archivo',sans-serif;font-stretch:112%;font-weight:800;font-size:46px;letter-spacing:-.025em;margin:0 0 14px}
+body{margin:0;font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:18px;line-height:1.6;background:#1E1A45;color:#fff;display:flex;min-height:100vh;align-items:center;justify-content:center;padding:24px}
+.box{max-width:560px;width:100%}
+.me{display:flex;align-items:center;gap:14px;margin-bottom:24px}
+.me img{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:50% 22%;border:3px solid #f5b300}
+.me p{margin:0;color:#d9d6ef;font-size:16px;line-height:1.4}.me b{color:#fff}
+h1{font-family:'Archivo',sans-serif;font-stretch:112%;font-weight:800;font-size:clamp(36px,7vw,46px);line-height:1.05;letter-spacing:-.025em;margin:0 0 14px}
 p{color:#d9d6ef}
-a.btn{display:inline-flex;min-height:54px;align-items:center;padding:0 28px;border-radius:4px;background:#f5b300;color:#000;text-decoration:none;font-weight:700;margin-top:18px}
+h2{font-family:'Archivo',sans-serif;font-weight:800;font-size:20px;margin:28px 0 8px}
+ul{margin:0;padding-left:22px;color:#d9d6ef}
+li{margin-bottom:6px}
+.acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+a.btn{display:inline-flex;min-height:54px;align-items:center;justify-content:center;padding:0 24px;border-radius:4px;text-decoration:none;font-weight:700;font-family:'Archivo',sans-serif;flex:1;min-width:200px}
+.go{background:#f5b300;color:#000}.line{border:2px solid #d9d6ef;color:#fff}
 a.btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+[hidden]{display:none!important}
 .fine{font-size:14px;color:#b9b5d6;margin-top:32px}
+.fine a{color:#fff}
 </style>
 </head>
 <body>
-<div class="box">
-  <h1>Got it. Thank you.</h1>
-  <p>I'll reach out today to set a time that works for you. If it's urgent, call or text <a href="tel:+19155255251" style="color:#f5b300;font-weight:600">(915) 525-5251</a>.</p>
-  <a class="btn" href="/">Back to home</a>
-  <p class="fine">John Campoverde, REALTOR®, ClearView Realty LLC. Equal Housing Opportunity.</p>
-</div>
+<main class="box" id="main">
+  <div class="me"><img src="/headshot.jpg" alt="John Campoverde" width="720" height="900"><p><b>John Campoverde</b><br>REALTOR® with ClearView Realty</p></div>
+  <h1 id="title">Got it. Thank you.</h1>
+  <p id="msg">I'll reach out today to set a time that works for you. If it's urgent, call or text me.</p>
+  <h2>What happens next</h2>
+  <ul id="next">
+    <li>I'll call or text you today from (915) 525-5251.</li>
+    <li>We'll pick a time to talk that works for you.</li>
+  </ul>
+  <div class="acts">
+    <a class="btn go" id="book" href="#" target="_blank" rel="noopener" hidden>Pick a time on my calendar</a>
+    <a class="btn go" id="call" href="tel:+19155255251">Call (915) 525-5251</a>
+    <a class="btn line" href="sms:+19155255251">Text me</a>
+  </div>
+  <p class="fine"><a href="/">Back to home</a> · John Campoverde, REALTOR®, ClearView Realty LLC. Equal Housing Opportunity.</p>
+</main>
+<script>
+// Paste your online booking link between the quotes to show the "Pick a time" button.
+var BOOKING_URL = '';
+
+(function () {
+  var lead = {};
+  try { lead = JSON.parse(sessionStorage.getItem('cv_lead') || '{}'); } catch (e) {}
+  var first = (lead.first || '').replace(/[^\p{L}\p{M}' -]/gu, '').slice(0, 30);
+  var copy = {
+    buyer: { msg: "I'll reach out today about your home search.", next: ["I'll call or text you today from (915) 525-5251.", "We'll go over your budget, areas and timeline.", "If you're not pre-approved yet, I'll share lenders you can compare."] },
+    seller: { msg: "I'll reach out today about your home, and I'll start looking at recent sales near you before we talk.", next: ["I'll call or text you today from (915) 525-5251.", "I'll pull recent sales near your address.", "We'll set a time to talk through pricing and your plan."] },
+    relocation: { msg: "I'll reach out today about your move. Moving somewhere new is a lot, so we'll take it one step at a time.", next: ["I'll call or text you today from (915) 525-5251.", "We'll go over your timeline and what you need in a home.", "I'll answer your questions about the move."] },
+    'home-value': { msg: "I'll start on your free home value report and reach out today with any questions about your home.", next: ["I'll pull recent sales near your address.", "I'll call or text you today from (915) 525-5251.", "You'll get a clear report with a suggested price range."] }
+  }[lead.type];
+  if (first) document.getElementById('title').textContent = 'Thanks, ' + first + '. Got it.';
+  if (copy) {
+    document.getElementById('msg').textContent = copy.msg;
+    var ul = document.getElementById('next'); ul.innerHTML = '';
+    copy.next.forEach(function (t) { var li = document.createElement('li'); li.textContent = t; ul.appendChild(li); });
+  }
+  if (BOOKING_URL.indexOf('https://') === 0) {
+    var b = document.getElementById('book'); b.href = BOOKING_URL; b.hidden = false;
+    document.getElementById('call').className = 'btn line';
+  }
+})();
+</script>
 </body>
 </html>
