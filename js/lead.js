@@ -18,10 +18,10 @@
   else { try { utm = JSON.parse(load('cv_utm') || '{}'); } catch (e) { utm = {}; } }
 
   function set(f, name, val) { var el = f.querySelector('input[name="' + name + '"]'); if (el && val) el.value = String(val).slice(0, 200); }
-  document.querySelectorAll('form[data-netlify]').forEach(function (f) {
+  document.querySelectorAll('form[data-lead-type]').forEach(function (f) {
     set(f, 'landing-page', first.landing);
     set(f, 'first-visit', first.date);
-    set(f, 'referrer', first.ref);
+    set(f, 'came-from', first.ref);
     set(f, 'source-page', location.pathname);
     set(f, 'utm-source', utm.source); set(f, 'utm-medium', utm.medium); set(f, 'utm-campaign', utm.campaign);
     f.addEventListener('submit', function () {
