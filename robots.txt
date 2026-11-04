@@ -1,0 +1,5 @@
+# All search engines and AI search crawlers (Googlebot, Bingbot, OAI-SearchBot, etc.) are welcome.
+User-agent: *
+Allow: /
+
+Sitemap: https://campoverdeestates.com/sitemap.xml
