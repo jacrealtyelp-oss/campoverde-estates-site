@@ -80,8 +80,9 @@ input:focus,textarea:focus{outline:3px solid #f5b300;outline-offset:0}
 <a class="big b-line" href="/#market"><span>See this month's El Paso numbers<small>Prices, days on market and mortgage rates</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 </div>
 
-<form id="book" name="open-house" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field">
+<form id="book" name="open-house" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field" data-lead-type="open-house">
 <input type="hidden" name="form-name" value="open-house">
+<input type="hidden" name="landing-page"><input type="hidden" name="first-visit"><input type="hidden" name="referrer"><input type="hidden" name="source-page"><input type="hidden" name="utm-source"><input type="hidden" name="utm-medium"><input type="hidden" name="utm-campaign">
 <input type="hidden" name="source" value="Open house sign">
 <p class="hidden"><label>Leave this empty <input name="bot-field"></label></p>
 <h2>Book a free buyer consultation</h2>
@@ -106,5 +107,6 @@ if (SEARCH_URL.indexOf('http') === 0) { var b = document.getElementById('search-
 </script>
 </main>
 <footer>John Campoverde, REALTOR&reg;, ClearView Realty LLC, 12247 Rojas Dr, El Paso, TX. <a href="tel:+19155255251">(915) 525-5251</a>. Equal Housing Opportunity.<br><a href="/">Back to home</a></footer>
+<script src="/js/lead.js" defer></script>
 </body>
 </html>

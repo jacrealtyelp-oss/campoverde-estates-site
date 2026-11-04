@@ -233,9 +233,9 @@ footer a{color:var(--white)}
   <div class="wrap nav">
     <a class="brand" href="#top"><strong>JOHN CAMPOVERDE</strong><span>REALTOR® with ClearView Realty</span></a>
     <nav aria-label="Main">
-      <a class="link" href="#market">Market</a>
-      <a class="link" href="#buying">Buying</a>
-      <a class="link" href="#selling">Selling</a>
+            <a class="link" href="/buy.html">Buy</a>
+      <a class="link" href="/sell.html">Sell</a>
+      <a class="link" href="/relocate.html">Moving here</a>
       <a class="link" href="#about">About</a>
       <a class="link phone-link" href="tel:+19155255251">(915) 525-5251</a>
       <a class="btn btn-go" href="#contact" data-goal="Buy a home">Book an appointment</a>
@@ -259,9 +259,10 @@ footer a{color:var(--white)}
         <h2>Where do you want to start?</h2>
         <p>Pick one. I'll take it from there, usually the same day.</p>
         <div class="choices">
-          <a class="choice primary" href="#contact" data-goal="Buy a home"><span>Buy a home<small>Book a buyer consultation</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="choice" href="#contact" data-goal="Sell a home"><span>Sell my home<small>Get a pricing plan</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="choice primary" href="/buy.html"><span>Buy a home<small>Book a buyer consultation</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="choice" href="/sell.html"><span>Sell my home<small>Get a pricing plan</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <a class="choice" href="/home-value.html"><span>What's my home worth?<small>Free market analysis</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="choice" href="/relocate.html"><span>Moving to El Paso?<small>Plan your move, including Fort Bliss PCS</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
         <p class="call">Prefer to talk? <a href="tel:+19155255251">Call</a> or <a href="sms:+19155255251">text</a> (915) 525-5251</p>
       </div>
@@ -338,7 +339,7 @@ footer a{color:var(--white)}
         <li><h3>Closing</h3><p>I keep inspection, appraisal and every deadline on track until you get the keys.</p></li>
       </ol>
       <div class="after">
-        <a class="btn btn-go" href="#contact" data-goal="Buy a home">Book your buyer consultation</a>
+        <a class="btn btn-go" href="/buy.html">Book your buyer consultation</a>
         <span>Free, no obligation.</span>
       </div>
     </div>
@@ -358,8 +359,8 @@ footer a{color:var(--white)}
         <li><h3>Offers to closing</h3><p>I negotiate every offer and keep repairs, appraisal and deadlines on track.</p></li>
       </ol>
       <div class="after">
-        <a class="btn btn-black" href="/home-value.html">Get your free home value</a>
-        <span>Based on recent sales near you.</span>
+        <a class="btn btn-black" href="/sell.html">Talk to me about selling</a>
+        <a class="btn btn-line" href="/home-value.html">Get your free home value</a>
       </div>
     </div>
   </section>
@@ -392,9 +393,10 @@ footer a{color:var(--white)}
         <p>Email <a href="mailto:jac.realty.elp@gmail.com">jac.realty.elp@gmail.com</a></p>
         <p><span style="display:block;font-family:Archivo,sans-serif;font-stretch:112%;font-weight:800;font-size:22px;color:#fff">ClearView Realty LLC</span>12247 Rojas Dr, El Paso, TX</p>
       </div>
-      <form name="contact" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field">
+      <form name="contact" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field" data-lead-type="general">
         <h3>Request an appointment</h3>
         <input type="hidden" name="form-name" value="contact">
+        <input type="hidden" name="landing-page"><input type="hidden" name="first-visit"><input type="hidden" name="referrer"><input type="hidden" name="source-page"><input type="hidden" name="utm-source"><input type="hidden" name="utm-medium"><input type="hidden" name="utm-campaign">
         <p class="hidden"><label>Leave this empty <input name="bot-field"></label></p>
         <label>I want to
           <select name="goal" id="goal">
@@ -402,6 +404,8 @@ footer a{color:var(--white)}
             <option>Sell a home</option>
             <option>Find out what my home is worth</option>
             <option>Buy and sell</option>
+            <option>Move to El Paso</option>
+            <option>Something else</option>
           </select>
         </label>
         <label>Name <input name="name" autocomplete="name" required></label>
@@ -525,5 +529,6 @@ document.querySelectorAll('[data-goal]').forEach(function (el) {
   io.observe(market);
 })();
 </script>
+<script src="/js/lead.js" defer></script>
 </body>
 </html>
