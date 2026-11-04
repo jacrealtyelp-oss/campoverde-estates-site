@@ -11,6 +11,10 @@
 <meta property="og:description" content="Buying or selling in El Paso? Clear numbers, a clear plan and a straight answer to every question.">
 <meta property="og:url" content="https://campoverdeestates.com/">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://campoverdeestates.com/headshot.jpg">
+<meta property="og:image:alt" content="John Campoverde, REALTOR® with ClearView Realty">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script>document.documentElement.classList.add("js")</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,6 +70,7 @@ header{background:var(--deep);color:var(--white);position:sticky;top:0;z-index:2
 .nav nav{display:flex;align-items:center;gap:28px}
 .nav nav a.link{color:var(--white);text-decoration:none;font-size:16px;font-weight:500}
 .nav nav a.link:hover{text-decoration:underline}
+.nav nav a.phone-link{font-weight:700;color:var(--go)}
 .nav .btn{min-height:44px;padding:8px 20px;font-size:15px}
 
 .hero{background:var(--indigo);color:var(--white);padding:88px 0 96px}
@@ -170,6 +175,9 @@ input,select,textarea{font:inherit;font-size:17px;padding:13px 14px;border:1.5px
 input:focus,select:focus,textarea:focus{border-color:var(--black);outline:3px solid var(--go);outline-offset:0}
 .consent{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:14px;color:var(--gray)}
 .consent input{width:auto;margin-top:4px}
+.consent-note,.contact form .consent-note{margin:0;font-size:14px;color:var(--gray)}
+.optin{border:1px solid var(--rule);border-radius:4px;padding:10px 14px 14px;margin:0;display:grid;gap:10px}
+.optin legend{font-size:14px;font-weight:600;color:var(--gray);padding:0 6px}
 .hidden{display:none}
 
 footer{background:var(--deep);color:#c9c6e0;padding:48px 0 120px;font-size:15px}
@@ -217,6 +225,7 @@ footer a{color:var(--white)}
       <a class="link" href="#buying">Buying</a>
       <a class="link" href="#selling">Selling</a>
       <a class="link" href="#about">About</a>
+      <a class="link phone-link" href="tel:+19155255251">(915) 525-5251</a>
       <a class="btn btn-go" href="#contact" data-goal="Buy a home">Book an appointment</a>
     </nav>
   </div>
@@ -235,7 +244,7 @@ footer a{color:var(--white)}
         <div class="choices">
           <a class="choice primary" href="#contact" data-goal="Buy a home"><span>Buy a home<small>Book a buyer consultation</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <a class="choice" href="#contact" data-goal="Sell a home"><span>Sell my home<small>Get a pricing plan</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="choice" href="#contact" data-goal="Find out what my home is worth"><span>What's my home worth?<small>Free market analysis</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="choice" href="/home-value.html"><span>What's my home worth?<small>Free market analysis</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
         <p class="call">Prefer to talk? <a href="tel:+19155255251">Call</a> or <a href="sms:+19155255251">text</a> (915) 525-5251</p>
       </div>
@@ -246,7 +255,7 @@ footer a{color:var(--white)}
     <div class="wrap">
       <ul>
         <li><b>Licensed REALTOR®</b><span>Texas real estate license</span></li>
-        <li><b>ClearView Realty</b><span>Serving El Paso for 20 years</span></li>
+        <li><b>ClearView Realty</b><span>My brokerage, right here in El Paso</span></li>
         <li><b>Same-day replies</b><span>By call, text or email</span></li>
         <li><b>Buyers and sellers</b><span>FHA, VA and conventional</span></li>
       </ul>
@@ -337,7 +346,7 @@ footer a{color:var(--white)}
         <li><h3>Offers to closing</h3><p>I negotiate every offer and keep repairs, appraisal and deadlines on track.</p></li>
       </ol>
       <div class="after">
-        <a class="btn btn-black" href="#contact" data-goal="Find out what my home is worth">Get your free home value</a>
+        <a class="btn btn-black" href="/home-value.html">Get your free home value</a>
         <span>Based on recent sales near you.</span>
       </div>
     </div>
@@ -365,7 +374,7 @@ footer a{color:var(--white)}
         <p><span style="display:block;font-family:Archivo,sans-serif;font-stretch:112%;font-weight:800;font-size:22px;color:#fff">ClearView Realty LLC</span>12247 Rojas Dr, El Paso, TX</p>
       </div>
       <form name="contact" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field">
-        <h3>Book an appointment</h3>
+        <h3>Request an appointment</h3>
         <input type="hidden" name="form-name" value="contact">
         <p class="hidden"><label>Leave this empty <input name="bot-field"></label></p>
         <label>I want to
@@ -398,8 +407,13 @@ footer a{color:var(--white)}
           </select>
         </label>
         <label>Anything I should know? <textarea name="message" rows="3"></textarea></label>
-        <label class="consent"><input type="checkbox" name="consent" value="yes" required> <span>I agree that John Campoverde may contact me by call, text or email about buying or selling a home. Message and data rates may apply. Reply STOP to opt out. See my <a href="privacy.html">privacy policy</a>.</span></label>
-        <button class="btn btn-go" type="submit">Book my appointment</button>
+        <p class="consent-note">By sending this, you're asking me to contact you about your request by call, text or email.</p>
+        <fieldset class="optin"><legend>Optional, and not required to work with me</legend>
+        <label class="consent"><input type="checkbox" name="marketing-texts" value="yes"> <span>Text me occasional new listings and market updates. Message and data rates may apply. Reply STOP anytime to opt out.</span></label>
+        <label class="consent"><input type="checkbox" name="marketing-emails" value="yes"> <span>Email me occasional market updates. Unsubscribe anytime.</span></label>
+        </fieldset>
+        <p class="consent-note">See my <a href="/privacy.html">privacy policy</a>.</p>
+        <button class="btn btn-go" type="submit">Request my appointment</button>
       </form>
     </div>
   </section>
@@ -419,8 +433,10 @@ footer a{color:var(--white)}
       <!-- TREC-required links: iabs.pdf and consumer-protection-notice.pdf live in this folder. -->
       <a href="iabs.pdf" target="_blank" rel="noopener">Texas Real Estate Commission Information About Brokerage Services</a>
       <a href="consumer-protection-notice.pdf" target="_blank" rel="noopener">Texas Real Estate Commission Consumer Protection Notice</a>
-      <a href="privacy.html">Privacy and cookies</a>
-      <a href="accessibility.html">Accessibility</a>
+      <a href="/home-value.html">What's my home worth?</a>
+      <a href="/lenders.html">Trusted lenders</a>
+      <a href="/privacy.html">Privacy and cookies</a>
+      <a href="/accessibility.html">Accessibility</a>
     </div>
     <p class="legal">Information deemed reliable but not guaranteed. © 2026 John Campoverde, ClearView Realty LLC.</p>
   </div>

@@ -5,8 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>What is my home really worth? | John Campoverde, ClearView Realty LLC</title>
 <meta name="description" content="Online estimates can miss by thousands. Get a free comparative market analysis (CMA) of your El Paso home from John Campoverde, REALTOR® with ClearView Realty LLC.">
+<link rel="canonical" href="https://campoverdeestates.com/home-value.html">
+<meta property="og:title" content="What's your El Paso home really worth? Free CMA from John Campoverde">
+<meta property="og:description" content="A real number from recent sales near you, not an algorithm. Free, no obligation.">
+<meta property="og:url" content="https://campoverdeestates.com/home-value.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://campoverdeestates.com/headshot.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,800&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:#fff;color:#000;padding:8px 12px;z-index:30}
 :root{--ind:#1E1A45;--deep:#120F2B;--gold:#f5b300;--gold-h:#ffc533;--stone:#F3F2F8;--rule:#d8d6e4;--gray:#55526b;--lav:#d9d6ef}
 *{box-sizing:border-box}
 body{margin:0;font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:18px;line-height:1.6;color:#000;background:#fff}
@@ -42,6 +50,9 @@ input:focus,select:focus,textarea:focus{border-color:#000;outline:3px solid var(
 @media (max-width:480px){.two{grid-template-columns:1fr}}
 .consent{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:14px;color:var(--gray)}
 .consent input{width:auto;margin-top:4px}
+.consent-note{margin:0;font-size:14px}
+.optin{border:1px solid rgba(128,128,160,.45);border-radius:4px;padding:10px 14px 14px;margin:0;display:grid;gap:10px}
+.optin legend{font-size:14px;font-weight:600;padding:0 6px}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:10px 24px;border:0;border-radius:4px;font-family:'Archivo',sans-serif;font-weight:800;font-size:18px;cursor:pointer;text-decoration:none}
 .btn-go{background:var(--gold);color:#000;width:100%}
 .btn-go:hover{background:var(--gold-h)}
@@ -109,9 +120,10 @@ footer a{color:#fff;display:inline-block;padding:6px 0}
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <header><a class="logo" href="/">JOHN CAMPOVERDE</a><a class="hcall" href="tel:+19155255251">Call (915) 525-5251</a></header>
 
-<main>
+<main id="main">
 <div class="hero">
   <div class="wrap">
     <div>
@@ -144,9 +156,14 @@ footer a{color:#fff;display:inline-block;padding:6px 0}
         </select>
       </label>
       <label>Upgrades or anything I should know? <textarea name="message" rows="2"></textarea></label>
-      <label class="consent"><input type="checkbox" name="consent" value="yes" required> <span>John Campoverde may contact me by call, text or email about my home. Message and data rates may apply. Reply STOP to opt out. See my <a href="/privacy.html">privacy policy</a>.</span></label>
+      <p class="consent-note">By sending this, you're asking me to contact you about my home value by call, text or email.</p>
+      <fieldset class="optin"><legend>Optional, and not required to work with me</legend>
+      <label class="consent"><input type="checkbox" name="marketing-texts" value="yes"> <span>Text me occasional new listings and market updates. Message and data rates may apply. Reply STOP anytime to opt out.</span></label>
+      <label class="consent"><input type="checkbox" name="marketing-emails" value="yes"> <span>Email me occasional market updates. Unsubscribe anytime.</span></label>
+      </fieldset>
+      <p class="consent-note">See my <a href="/privacy.html">privacy policy</a>.</p>
       <button class="btn btn-go" type="submit">Get my free home value</button>
-      <p class="promise">Free, no obligation. I'll reach out within one business day.</p>
+      <p class="promise">Free, no obligation. I'll reach out the same day.</p>
     </form>
   </div>
 </div>
@@ -247,7 +264,7 @@ footer a{color:#fff;display:inline-block;padding:6px 0}
     <img src="headshot.jpg" alt="John Campoverde, REALTOR® with ClearView Realty LLC" width="720" height="900">
     <div>
       <h2 class="sec" style="margin:0">Who prepares your report</h2>
-      <p>I'm John Campoverde, a licensed REALTOR&reg; with ClearView Realty LLC, a brokerage that has served El Paso for 20 years. I'll pull the sales myself, walk you through the numbers and give you a straight answer. Straight talk, and I always pick up.</p>
+      <p>I'm John Campoverde, a licensed REALTOR&reg; with ClearView Realty LLC, an El Paso brokerage that has served the area for 20 years. I'll pull the sales myself, walk you through the numbers and give you a straight answer. Straight talk, and I always pick up.</p>
     </div>
   </div>
 </section>
