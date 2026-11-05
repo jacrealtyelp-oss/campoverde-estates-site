@@ -21,16 +21,59 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "RealEstateAgent",
-  "name": "John Campoverde, ClearView Realty",
-  "telephone": "+1-915-525-5251",
-  "image": "https://campoverdeestates.com/headshot.jpg",
-  "email": "jac.realty.elp@gmail.com",
-  "address": {"@type": "PostalAddress", "streetAddress": "12247 Rojas Dr", "addressLocality": "El Paso", "addressRegion": "TX", "addressCountry": "US"},
-  "areaServed": ["El Paso, TX", "Horizon City, TX"],
-  "url": "https://campoverdeestates.com/",
-  "parentOrganization": {"@type": "RealEstateAgent", "name": "ClearView Realty", "url": "https://www.clearviewep.com/"}
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebSite",
+   "@id": "https://campoverdeestates.com/#website",
+   "url": "https://campoverdeestates.com/",
+   "name": "John Campoverde, REALTOR® with ClearView Realty",
+   "inLanguage": "en-US",
+   "publisher": {
+    "@id": "https://campoverdeestates.com/#john"
+   }
+  },
+  {
+   "@type": "Person",
+   "@id": "https://campoverdeestates.com/#john",
+   "name": "John Campoverde",
+   "jobTitle": "REALTOR®",
+   "description": "Licensed Texas real estate agent helping buyers and sellers in El Paso and Horizon City.",
+   "url": "https://campoverdeestates.com/",
+   "image": "https://campoverdeestates.com/headshot.jpg",
+   "telephone": "+1-915-525-5251",
+   "email": "jac.realty.elp@gmail.com",
+   "worksFor": {
+    "@id": "https://campoverdeestates.com/#brokerage"
+   },
+   "sameAs": [
+    "https://www.clearviewep.com/agents/john-campoverde/"
+   ]
+  },
+  {
+   "@type": "RealEstateAgent",
+   "@id": "https://campoverdeestates.com/#brokerage",
+   "name": "ClearView Realty LLC",
+   "url": "https://www.clearviewep.com/",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "12247 Rojas Dr",
+    "addressLocality": "El Paso",
+    "addressRegion": "TX",
+    "addressCountry": "US"
+   },
+   "areaServed": [
+    {
+     "@type": "City",
+     "name": "El Paso, TX"
+    },
+    {
+     "@type": "City",
+     "name": "Horizon City, TX"
+    }
+   ]
+  }
+ ]
 }
 </script>
 <style>
@@ -530,5 +573,6 @@ document.querySelectorAll('[data-goal]').forEach(function (el) {
 })();
 </script>
 <script src="/js/lead.js" defer></script>
+<script src="/js/track.js" defer></script>
 </body>
 </html>
