@@ -123,21 +123,30 @@ async function hs(path, token, opts = {}) {
     headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json', ...(opts.headers || {}) },
   });
   const text = await res.text();
-  const body = text ? JSON.parse(text) : null;
-  if (!res.ok && res.status !== 404) throw new Error(`HubSpot ${opts.method || 'GET'} ${path} -> ${res.status}: ${text.slice(0, 300)}`);
+  let body = null;
+  try { body = text ? JSON.parse(text) : null; } catch (e) { body = null; }
+  if (!res.ok && res.status !== 404) throw new Error(`HubSpot ${opts.method || 'GET'} ${path.split('?')[0]} -> ${res.status}: ${text.replace(/\s+/g, ' ').slice(0, 200)}`);
   return { status: res.status, body };
 }
 
 async function ensureProperties(token) {
+  const ok = new Set();
   for (const p of CUSTOM_PROPERTIES) {
-    const r = await hs(`/crm/v3/properties/contacts/${p.name}`, token);
-    if (r.status === 404) {
-      await hs('/crm/v3/properties/contacts', token, { method: 'POST', body: JSON.stringify({ ...p, groupName: 'contactinformation' }) });
-    }
+    try {
+      const r = await hs(`/crm/v3/properties/contacts/${p.name}`, token);
+      if (r.status === 404) {
+        await hs('/crm/v3/properties/contacts', token, { method: 'POST', body: JSON.stringify({ ...p, groupName: 'contactinformation' }) });
+      }
+      ok.add(p.name);
+    } catch (e) { console.error(`Couldn't set up field ${p.name}: ${e.message}`); }
   }
+  return ok;
 }
 
 async function findContact(token, props) {
+  try { return await findContactInner(token, props); } catch (e) { console.error('Lookup skipped: ' + e.message); return null; }
+}
+async function findContactInner(token, props) {
   const keep = ['cv_client_stage', ...FIRST_TOUCH].join(',');
   if (props.email) {
     const r = await hs(`/crm/v3/objects/contacts/${encodeURIComponent(props.email)}?idProperty=email&properties=${keep}`, token);
@@ -153,7 +162,9 @@ async function findContact(token, props) {
 
 export async function sendToHubSpot(payload, token, now = new Date()) {
   const lead = buildLead(payload, now);
-  await ensureProperties(token);
+  const ready = await ensureProperties(token);
+  // Drop any custom field HubSpot couldn't create, so the contact still saves.
+  for (const k of Object.keys(lead.props)) if (k.startsWith('cv_') && !ready.has(k)) delete lead.props[k];
 
   const existing = await findContact(token, lead.props);
   let id;
@@ -170,18 +181,23 @@ export async function sendToHubSpot(payload, token, now = new Date()) {
     id = (await hs('/crm/v3/objects/contacts', token, { method: 'POST', body: JSON.stringify({ properties: lead.props }) })).body.id;
   }
 
-  const owners = (await hs('/crm/v3/owners?limit=1', token)).body;
-  const ownerId = owners && owners.results && owners.results[0] ? owners.results[0].id : undefined;
+  let ownerId;
+  try {
+    const owners = (await hs('/crm/v3/owners/?limit=1', token)).body;
+    ownerId = owners && owners.results && owners.results[0] ? owners.results[0].id : undefined;
+  } catch (e) { console.error('Owner lookup skipped: ' + e.message); }
   const ts = now.toISOString();
 
-  await hs('/crm/v3/objects/notes', token, { method: 'POST', body: JSON.stringify({
+  try { await hs('/crm/v3/objects/notes', token, { method: 'POST', body: JSON.stringify({
     properties: { hs_timestamp: ts, hs_note_body: lead.note, ...(ownerId ? { hubspot_owner_id: ownerId } : {}) },
     associations: [{ to: { id }, types: [{ associationCategory: 'HUBSPOT_DEFINED', associationTypeId: 202 }] }] }) });
+  } catch (e) { console.error('Note skipped: ' + e.message); }
 
-  await hs('/crm/v3/objects/tasks', token, { method: 'POST', body: JSON.stringify({
+  try { await hs('/crm/v3/objects/tasks', token, { method: 'POST', body: JSON.stringify({
     properties: { hs_timestamp: ts, hs_task_subject: lead.taskSubject, hs_task_body: lead.taskBody,
       hs_task_status: 'NOT_STARTED', hs_task_priority: 'HIGH', hs_task_type: 'CALL', ...(ownerId ? { hubspot_owner_id: ownerId } : {}) },
     associations: [{ to: { id }, types: [{ associationCategory: 'HUBSPOT_DEFINED', associationTypeId: 204 }] }] }) });
+  } catch (e) { console.error('Task skipped: ' + e.message); }
 
   return { id, stage: lead.stage, updated: Boolean(existing) };
 }
